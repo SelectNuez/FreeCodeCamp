@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Palindrome Checker</title>
+    <script>
+      function palindrome(str) {
+        let strClear = str.replace(/[^0-9a-z]/gi, "");
+        strClear = strClear.toLowerCase();
+        let isPalindrome = false;
+        let array = strClear.split([]);
+        for (let index = 0; index < array.length; index++) {
+          if (array[index] == array[array.length - index - 1]) {
+            isPalindrome = true;
+          } else {
+            return false;
+          }
+        }
+        return isPalindrome;
+      }
+    </script>
+  </head>
+  <body>
+    <script>
+      console.log(palindrome("eye")); //should return a boolean.
+
+      console.log(palindrome("eye")); //should return true.
+
+      console.log(palindrome("_eye")); //should return true.
+
+      console.log(palindrome("race car")); //should return true.
+
+      console.log(palindrome("not a palindrome")); //should return false.
+
+      console.log(palindrome("A man, a plan, a canal. Panama")); //should return true.
+
+      console.log(palindrome("never odd or even")); //should return true.
+
+      console.log(palindrome("nope")); //should return false.
+
+      console.log(palindrome("almostomla")); //should return false.
+
+      console.log(palindrome("My age is 0, 0 si ega ym.")); //should return true.
+
+      console.log(palindrome("1 eye for of 1 eye.")); //should return false.
+
+      console.log(palindrome("0_0 (: /-\ :) 0-0")); //should return true.
+
+      console.log(palindrome("five|\_/|four")); //should return false.
+    </script>
+  </body>
+</html>
